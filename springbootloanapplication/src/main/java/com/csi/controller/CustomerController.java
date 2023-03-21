@@ -32,4 +32,9 @@ public class CustomerController {
                 new Customer(122,"Vaibhav",11000)).collect(Collectors.toList()));
     }
 
+    @GetMapping("/hello")
+    public ResponseEntity<String> sayHello(){
+        return ResponseEntity.ok("Welcome to Intellij");
+    }
+
 }
