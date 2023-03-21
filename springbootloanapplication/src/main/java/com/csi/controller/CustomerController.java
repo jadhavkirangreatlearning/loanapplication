@@ -20,6 +20,7 @@ class Customer{
     private int custId;
     private String custName;
     private double custAccountBalance;
+    private long custContactNumber;
 
 
 }
@@ -28,8 +29,13 @@ class Customer{
 public class CustomerController {
     @GetMapping("/getcustlist")
     public ResponseEntity<List<Customer>>getCustList(){
-        return ResponseEntity.ok(Stream.of(new Customer(121,"Akshay", 10000),
-                new Customer(122,"Vaibhav",11000)).collect(Collectors.toList()));
+        return ResponseEntity.ok(Stream.of(new Customer(121,"Akshay", 10000, 878787887),
+                new Customer(122,"Vaibhav",11000, 57576767)).collect(Collectors.toList()));
+    }
+
+    @GetMapping("/business")
+    public String sayBusiness(){
+        return "APP DEVELOPMENT";
     }
 
     @GetMapping("/hello")
